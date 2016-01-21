@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    </head>
+<header>
+    <div class="container">
+        <strong>
+            <nav>
+                <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="./">School Donations Dashboard</a>
+                        </div>
+                        <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">
+                            Start Tour!
+                        </button>
+                        <ul class="menu">
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </strong>
+
+    </div>
+</header>
+
+<body class="application">
+
+<div id="outer" class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="chart-wrapper" data-step="1" data-intro="Describes the number of donations by month" style="font-weight:normal" data-position="right">
+                <div class="chart-title">Number of Donations
+                </div>
+                <div class="chart-stage">
+                    <div id="time-chart"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="chart-wrapper" data-step="2" data-intro="Describes the top subject-focus categories" style="font-weight:normal" data-position="left">
+                <div class="chart-title">
+                    Subject Focus
+                </div>
+                <div class="chart-stage">
+                    <div id="primary-focus-subject-chart"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="chart-wrapper" id="hight" data-step="3" data-intro="Describes the number of donations per state" style="font-weight: normal" data-position="right">
+                <div class="chart-title">
+                    Donation State
+                </div>
+                <div class="chart-stage">
+                    <div id="menu-select"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="chart-wrapper" id="hight" data-step="4" data-intro="Describes the total number of donations in US dollars according to the selection in the Donation State Menu" style="font-weight: normal" data-position="left">
+                <div class="chart-title">
+                    Total Donations in USD
+                </div>
+                <div class="chart-stage">
+                    <div id="total-donations-nd"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="chart-wrapper" data-step="5" data-intro="Provides comparative data on wealth distribution" style="font-weight: normal" data-position="right">
+            <div class="chart-title">
+                Poverty Level
+            </div>
+            <div class="chart-stage">
+                <div id="poverty-level-row-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="chart-wrapper" data-step="6" data-intro="Compares amounts of money spent on different resources" style="font-weight: normal" data-position="left">
+            <div class="chart-title">
+                Resources Type
+            </div>
+            <div class="chart-stage">
+                <div id="resource-type-row-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="chart-wrapper" data-step="7" data-intro="Describes the percentage of donations completed" style="font-weight: normal" data-position="left">
+            <div class="chart-title">
+                Funding Status
+            </div>
+            <div class="chart-stage">
+                <div id="funding-chart"></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+
+</body>
+{% endblock %}
